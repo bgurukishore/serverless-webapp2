@@ -15,9 +15,9 @@
             var customerDetailsViewModel = function() {
             var self = this;
 			
-			self.EmailID = ko.observable("");
-            self.FirstName = ko.observable("");
-            self.LastName = ko.observable("");
+			self.TradeID = ko.observable("");
+            self.Volume = ko.observable("");
+            self.Rate = ko.observable("");
             self.SuccessMessage = ko.observable("");
 			
 			
@@ -29,8 +29,8 @@
 				var CustomerDetail = {
 				
 				TradeID: self.TradeID(),
-				FirstName: self.FirstName(),
-				LastName: self.LastName()
+				Volume: self.Volume(),
+				Rate: self.Rate()
 				
 				}
 				
@@ -49,9 +49,9 @@
                     data: ko.toJSON(CustomerDetail),
                     success: function (data) {              
                         self.SuccessMessage(data)
-							self.EmailID('');
-							self.FirstName('');
-							self.LastName('');
+							self.TradeID('');
+							self.Volume('');
+							self.Rate('');
 							
 						
                     }
@@ -78,19 +78,19 @@
             <td>
 				<div>
 				<p>
-					EmailID:
-					<input data-bind='value: EmailID' />
+					TradeID:
+					<input data-bind='value: TradeID' />
 					
 					</p>
 					
 					<p>
 					
-						FirstName:
-						<input data-bind='value: FirstName' />
+						Volume:
+						<input data-bind='value: Volume' />
 						</p>
 						<p>
-						LastName:
-						<input data-bind='value: LastName' />
+						Rate:
+						<input data-bind='value: Rate' />
 						</p>
 						
 						</div>
