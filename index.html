@@ -8,9 +8,8 @@
     <script type="text/javascript">
         
 
-		jQuery.support.cors = true;
-		
-        $(document).ready(function() {
+	jQuery.support.cors = true;
+	$(document).ready(function() {
 
             var customerDetailsViewModel = function() {
             var self = this;
@@ -19,32 +18,19 @@
             self.Volume = ko.observable("");
             self.Rate = ko.observable("");
             self.SuccessMessage = ko.observable("");
-			
-			
-			
-			
-
-            self.SaveCustomerDetails = function () {              
+	    self.SaveCustomerDetails = function () {              
                 
 				var CustomerDetail = {
-				
 				TradeID: self.TradeID(),
 				Volume: self.Volume(),
 				Rate: self.Rate()
 				
 				}
-				
-				
-				
-				
-				
 				$.ajax({
 					crossDomain: true,
 				
-                    url: 'https://35u68ll22h.execute-api.us-east-2.amazonaws.com/dev/postcustomerdetails',
-					
-					
-                    cache: false,
+                    url: 'https://8etfcticb1.execute-api.us-east-2.amazonaws.com/TechChallenge/updatetradeiddetails',
+	            cache: false,
                     type: 'POST', 
                     data: ko.toJSON(CustomerDetail),
                     success: function (data) {              
